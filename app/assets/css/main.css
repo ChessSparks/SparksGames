@@ -1,0 +1,182 @@
+:root {
+  --bg: #0d0906;
+  --bg-soft: #150f0a;
+  --surface: #1c130c;
+  --surface-hover: #241a10;
+  --border: #332415;
+  --text: #f5ece2;
+  --text-dim: #b9a996;
+  --text-faint: #7c6c5c;
+
+  --orange: #ff6a1a;
+  --orange-bright: #ff9633;
+  --orange-deep: #e6470a;
+  --gold: #ffb703;
+
+  --font-display: 'Orbitron', 'Rubik', system-ui, sans-serif;
+  --font-body: 'Rubik', system-ui, -apple-system, sans-serif;
+
+  --radius: 16px;
+  --shadow-glow: 0 0 40px rgba(255, 106, 26, 0.25);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  background: var(--bg);
+  color-scheme: dark;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  margin: 0 0 0.5em;
+}
+
+p {
+  margin: 0 0 1em;
+  color: var(--text-dim);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img, svg {
+  max-width: 100%;
+  display: block;
+}
+
+::selection {
+  background: var(--orange);
+  color: #150f0a;
+}
+
+/* Reusable background: dark base + soft orange glows (used behind the whole app) */
+.spark-bg {
+  position: relative;
+  isolation: isolate;
+  overflow: clip;
+}
+
+.spark-bg::before,
+.spark-bg::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.spark-bg::before {
+  background:
+    radial-gradient(600px circle at 15% -5%, rgba(255, 106, 26, 0.22), transparent 60%),
+    radial-gradient(700px circle at 90% 10%, rgba(255, 183, 3, 0.14), transparent 60%),
+    radial-gradient(900px circle at 50% 120%, rgba(230, 71, 10, 0.18), transparent 60%),
+    var(--bg);
+}
+
+.spark-bg::after {
+  background-image:
+    linear-gradient(rgba(255, 150, 51, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 150, 51, 0.05) 1px, transparent 1px);
+  background-size: 48px 48px;
+  mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, black, transparent 70%);
+}
+
+.container {
+  width: 100%;
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.9rem;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  padding: 14px 28px;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--orange-bright), var(--orange-deep));
+  color: #170d05;
+  box-shadow: 0 8px 24px rgba(255, 106, 26, 0.35);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 32px rgba(255, 106, 26, 0.45);
+}
+
+.btn-ghost {
+  background: transparent;
+  border-color: var(--border);
+  color: var(--text);
+}
+
+.btn-ghost:hover {
+  border-color: var(--orange);
+  color: var(--orange-bright);
+}
+
+.pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 6px 14px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  color: var(--text-dim);
+  background: rgba(255, 106, 26, 0.05);
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1), transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.reveal-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
