@@ -23,9 +23,9 @@ export const games: Game[] = [
     shortDescription: 'Eat, grow, don\'t bite yourself.',
     longDescription:
       'The arcade classic. Guide your snake around the grid, chase down every spark, and see how long you can grow before you run out of room.',
-    status: 'coming-soon',
+    status: 'play',
     genre: 'Classic',
-    link: null
+    link: 'https://arcade-games-pi.vercel.app/snake/index.html'
   },
   {
     slug: 'breakout',
@@ -47,9 +47,9 @@ export const games: Game[] = [
     shortDescription: 'Slide, merge, and chase the tile.',
     longDescription:
       'Combine matching numbers to reach 2048 and beyond. Easy to learn, brutally hard to put down.',
-    status: 'coming-soon',
+    status: 'play',
     genre: 'Puzzle',
-    link: null
+    link: 'https://arcade-games-pi.vercel.app/2048/index.html'
   },
   {
     slug: 'flappy-bird',
@@ -59,9 +59,33 @@ export const games: Game[] = [
     shortDescription: 'Tap to fly, don\'t clip the pipes.',
     longDescription:
       'One button, zero mercy. Keep tapping to stay airborne and thread the gap between every pipe for as long as you can.',
-    status: 'coming-soon',
+    status: 'play',
     genre: 'Casual',
-    link: null
+    link: 'https://arcade-games-pi.vercel.app/flappy-bird/index.html'
+  },
+  {
+    slug: 'memory-game',
+    icon: '🧠',
+    name: 'Memory Game',
+    gameplay: [],
+    shortDescription: 'Flip two, find the match, clear the board.',
+    longDescription:
+      'A grid of hidden cards and a memory built to test. Flip tiles two at a time, track what you\'ve seen, and clear every pair in as few turns as you can.',
+    status: 'play',
+    genre: 'Puzzle',
+    link: 'https://arcade-games-pi.vercel.app/memory-game/index.html'
+  },
+  {
+    slug: 'tetris',
+    icon: '🧩',
+    name: 'Tetris',
+    gameplay: [],
+    shortDescription: 'Stack the blocks, clear the lines.',
+    longDescription:
+      'The falling-block legend. Rotate and drop each piece to clear full lines before the stack reaches the top — speed picks up with every level.',
+    status: 'play',
+    genre: 'Classic',
+    link: 'https://arcade-games-pi.vercel.app/tetris/index.html'
   }
 ]
 
