@@ -28,6 +28,18 @@ export const games: Game[] = [
     link: 'https://arcade-games-pi.vercel.app/snake/index.html'
   },
   {
+    slug: 'chess',
+    icon: '♟️',
+    name: 'Chess',
+    gameplay: [],
+    shortDescription: 'Think, plan, conquer.',
+    longDescription:
+      'The timeless strategy classic. Outmaneuver your opponent, control the board, and deliver checkmate.',
+    status: 'play',
+    genre: 'Strategy',
+    link: 'https://chess-game-pi-eight.vercel.app'
+  },
+  {
     slug: 'breakout',
     icon: '🧱',
     name: 'Breakout',

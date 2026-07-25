@@ -66,8 +66,8 @@ interface BannerSlide {
 }
 
 const slides: BannerSlide[] = [
-  { image: snakeBanner, alt: 'Snake — classic game, endless fun', link: null },
-  { image: chessBanner, alt: 'Chess — think, plan, conquer', link: null },
+  { image: snakeBanner, alt: 'Snake — classic game, endless fun', link: 'https://arcade-games-pi.vercel.app/snake/index.html' },
+  { image: chessBanner, alt: 'Chess — think, plan, conquer', link: 'https://chess-game-pi-eight.vercel.app' },
   { image: lifeBanner, alt: 'Life — one choice, one night, a lifetime', link: 'https://the-life-game-azure.vercel.app/' }
 ]
 
